@@ -10,16 +10,26 @@
         #banner {
           height: 360px
           width: 100%;
+          object: fit cover;
+          margin-bottom: 16px;
         }
       </style>
 
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="static/banner.jpg">
+    
     <div class="container">
     <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-    <img class="img-fluid" id="banner" src="static/banner.jpg">
-  <h2 class= "text-center mt-2 mt-4">About Jovian</h2>
+<div class="row" style="margin-bottom: 16px">
+  <div class="col-md-6">
   <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar elementum integer enim neque volutpat ac tincidunt. Malesuada pellentesque elit eget gravida cum sociis. Tellus in hac habitasse platea dictumst vestibulum. Tortor posuere ac ut consequat semper viverra. Amet tellus cras adipiscing enim. Imperdiet proin fermentum leo vel orci porta non pulvinar neque. Tincidunt id aliquet risus feugiat in ante metus dictum at. Ac orci phasellus egestas tellus rutrum tellus pellentesque. Tellus molestie nunc non blandit massa enim nec dui nunc.</p>
+  </div>
+  <div class="d-none d-md-block col-md-6">
+  <img src="/static/people.jpg" style="height:320px; border-radius:4px">
+    </div>
+  </div>
   <h2 class ="text-center mt-2 mt-4;">Job Openings</h2>
   <div> {% for job in jobs %}
       {%include 'jobitem.html'%}
@@ -27,9 +37,10 @@
     </div>
   </div>
   <div class="text-center">
-  <button class="btn btn-primary btn-lg">Contact Us</button>
-    <p class="mt-4">Copyright 2022, Jovian</p>
+  <a class="btn btn-primary btn-lg" href="mailto:hello@jovian.ai?subject=Question%20about%20Job%20Openings&body=My%20name%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20question%20%3Center%20question%20here%3E%0D%0A%0D%0A">Contact Us</a>
+    
   </div>
 </div>
+    {%include 'footer.html'%}
       </body>
 </html>
